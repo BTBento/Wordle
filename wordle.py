@@ -26,10 +26,11 @@ def slow_print(blocks):
 
 
 def check_word(hidden_word):
+    allwords = get_all_words()
     attempt = 6
     while attempt > 0:
         guess = input("Guess: ").upper()
-        if len(guess) != 5:
+        if guess not in allwords or len(guess) != 5:
             print("INVALID GUESS MORON!")
         elif guess == hidden_word:
             print(f"You got it in {attempt} tries!")
